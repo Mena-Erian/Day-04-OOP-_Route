@@ -1,9 +1,24 @@
-﻿using Demo.Interface_Example_01;
+﻿//using Demo.Interface_Example_01;
+using Demo.Interface_Example_02;
 
 namespace Demo
 {
     internal class Program
     {
+        #region Interface Example 02
+        static void PrintTenNumbersFromSeries(ISeries series)
+        {
+            if (series is null)
+                return;
+            for (int i = 0; i <= 10; i++)
+            {
+                Console.Write($"{series.Current}\t");
+                series.GetNext();
+            }
+            series.Reset();
+            Console.WriteLine();
+        } 
+        #endregion
         static void Main()
         {
             #region Interface Example 01
@@ -31,10 +46,16 @@ namespace Demo
             #endregion
 
             #region Interface Example 02
-
-
-
+            /// TypeA seriesByTwo = new TypeA();
+            /// PrintTenNumbersFromSeries(seriesByTwo);
+            /// 
+            /// TypeB seriesByThree = new TypeB();
+            /// PrintTenNumbersFromSeries(seriesByThree);
+            /// 
+            /// TypeC seriesByFour = new TypeC();
+            /// PrintTenNumbersFromSeries(seriesByFour);
             #endregion
+
 
         }
     }
