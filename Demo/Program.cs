@@ -1,4 +1,5 @@
 ﻿//using Demo.Interface_Example_01;
+using Demo.Built_in_Interfaces;
 using Demo.Interface_Example_02;
 using Demo.Interface_Example_03;
 
@@ -130,6 +131,41 @@ namespace Demo
             /// Console.WriteLine(Names01[0]); // Amr 
             #endregion
 
+            #region Built-In Interfaces ICloneable
+            /// Employee employee1 = new Employee() { Id = 10, Name = "Ahmed", Salary = 8_000, Department = new Department() { Code = 1001, Title = "Sales" } };
+            /// Employee employee2 = new Employee() { Id = 20, Name = "Omnia", Salary = 4_000, Department = new Department() { Code = 2002, Title = "HR" } };
+            /// 
+            /// Console.WriteLine($"employee1.GetHashCode() = {employee1.GetHashCode()}");
+            /// Console.WriteLine($"employee2.GetHashCode() = {employee2.GetHashCode()}");
+            /// 
+            /// //  employee2 = (Employee)employee1.Clone();
+            /// // 2. Deep Copy Using Clone 
+            /// // Clone Method: This Method Generetes NEW Object With NEW and DIFFERENT Idintity 
+            /// //             : This Object Will Have the Same State[Data] of the Caller Object
+            /// 
+            /// // Another to Make Depp Copy
+            /// employee2 = new Employee(employee1); // 2.1 Deep Copy Using Clone Method
+            /// 
+            /// 
+            /// Console.WriteLine("After Deep Copy");
+            /// 
+            /// 
+            /// 
+            /// //employee2.Salary = 10000;
+            /// 
+            /// if (employee2.Department is not null)
+            ///     employee2.Department.Title = "NEW";
+            /// 
+            /// employee2.Salary = 6_000;
+            /// employee2.Name = "test";
+            /// 
+            /// 
+            /// Console.WriteLine($"employee1.GetHashCode() = {employee1.GetHashCode()}");
+            /// Console.WriteLine($"employee2.GetHashCode() = {employee2.GetHashCode()}");
+            /// 
+            /// Console.WriteLine($"Emp 01 = ${employee1}");
+            /// Console.WriteLine($"Emp 02 = ${employee2}"); 
+            #endregion
 
 
         }
