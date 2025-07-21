@@ -167,6 +167,28 @@ namespace Demo
             /// Console.WriteLine($"Emp 02 = ${employee2}"); 
             #endregion
 
+            //int[] Numbers = [9, 2, 59, 32, 5, 4, 8, 1, 65, 3, 5];
+
+            //Array.Sort(Numbers);
+
+            //foreach (int i in Numbers)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            Employee[] employees =
+            {
+                new Employee(){Id = 10,Name = "Ahmed",Salary=8_000},
+                new Employee(){Id = 20,Name = "Omnia",Salary=2_000},
+                new Employee(){Id = 30,Name = "Nadia",Salary=10_000},
+                new Employee(){Id = 40,Name = "Omars",Salary=6_000},
+            };
+        
+            Array.Sort(employees);
+            foreach (Employee employee in employees)
+                Console.WriteLine(employee);
+            
+            //int Result = employees[0].CompareTo("Hamda"); // it Will Throw Exception
 
         }
     }

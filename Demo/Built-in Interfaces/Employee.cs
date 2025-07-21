@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Demo.Built_in_Interfaces
 {
-    internal class Employee : ICloneable
+    internal class Employee : ICloneable, IComparable
     {
         public int Id { get; set; }
         public string? Name { get; set; }
@@ -44,8 +44,30 @@ namespace Demo.Built_in_Interfaces
             ///     Department = (Department?)this.Department?.Clone()
             ///     // here you Maked DEEP COPY (USING Clone Method)
             /// };
-        
+
             return new Employee(this); // new Employee(employee1)
+        }
+        public int CompareTo(object? obj)
+        {
+            /// for (int i = 0; i < employees.Length; i++)
+            /// {
+            ///     for (int j = 0; j < employees.Length - i - 1; j++)
+            ///     {
+            ///         if (employees[j].CompareTo(employees[j + 1]) = 1)
+            ///             SWAP(employees[j], employees[j + 1]);
+            ///     }
+            /// }
+
+            Employee? other = (Employee?)obj; // Explicit Casting
+                                              // UnSafe Casting [May Throw Exception] (is or as)
+            /// if (other is null) return 1;
+            /// 
+            /// if (this.Salary > other?.Salary) return 1;
+            /// if (this.Salary < other?.Salary) return -1;
+            /// return 0;
+
+            return this.Salary.CompareTo(other?.Salary);
+            //return - this.Salary.CompareTo(other?.Salary);
         }
 
         public override string ToString()
