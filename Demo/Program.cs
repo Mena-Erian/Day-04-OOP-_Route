@@ -1,5 +1,6 @@
 ﻿//using Demo.Interface_Example_01;
 using Demo.Interface_Example_02;
+using Demo.Interface_Example_03;
 
 namespace Demo
 {
@@ -56,7 +57,24 @@ namespace Demo
             /// PrintTenNumbersFromSeries(seriesByFour);
             #endregion
 
+            #region Interface Example 03
 
+            Airplane airplane = new Airplane();
+            airplane.Speed = 480;
+            //airplane.Frowerd();
+
+            IMoveable moveable = airplane;
+            moveable.Forward();
+
+            IFlyable flyable = airplane;
+            flyable.Forward();
+
+
+
+
+
+
+            #endregion
         }
     }
 }
