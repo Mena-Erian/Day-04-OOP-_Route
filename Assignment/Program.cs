@@ -1,15 +1,18 @@
 ﻿using Assignment.Q1;
+using Assignment.Q2;
 
 namespace Assignment
 {
     internal class Program
     {
+        #region Part02 Q1
         static void DisplayShape(IShape shape)
         {
             Console.WriteLine("\n---------------------------------");
             shape.DisplayShapeInfo();
             Console.WriteLine("\n---------------------------------");
         }
+        #endregion
         static void Main()
         {
             #region Part 01
@@ -66,6 +69,20 @@ namespace Assignment
             /// DisplayShape(Rectangle);
             /// DisplayShape(Circle);
             #endregion
+
+            #region Q2: Authentication Service
+            /// IAuthenticationService authService;
+            /// User user = new User() { UserName = "Mona", Password = "pas123", Number = 0 ,Role = Role.Employee };
+            /// Console.WriteLine(user.Role);
+            /// 
+            /// BasicAuthenticationService bAS = new BasicAuthenticationService(new DataBase());
+            /// authService = bAS;
+            /// 
+            /// Console.WriteLine($"authService.AuthenticateUser(user) => {authService.AuthenticateUser(user)}");
+            /// Console.WriteLine($"authService.AuthorizeUser(user) => {authService.AuthorizeUser(user)}");
+            #endregion
+
+
 
             #endregion
         }
