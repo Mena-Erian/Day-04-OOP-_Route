@@ -1,10 +1,23 @@
 ﻿using Assignment.Q1;
 using Assignment.Q2;
+using Assignment.Q3.Channels;
+using Assignment.Q3.NotificationServices;
+using System.Threading.Channels;
 
 namespace Assignment
 {
     internal class Program
     {
+
+        #region Part02 Q3
+
+        static void sendNotification(INotificationService notificationService, IChannel channel, string massege)
+        {
+            notificationService.SendNotification(channel, massege);
+            channel.ShowNewsToUser();
+        }
+        #endregion
+
         #region Part02 Q1
         static void DisplayShape(IShape shape)
         {
@@ -82,7 +95,30 @@ namespace Assignment
             /// Console.WriteLine($"authService.AuthorizeUser(user) => {authService.AuthorizeUser(user)}");
             #endregion
 
-
+            #region Q3: Notification Service and Channels
+            /// ChannelA channelA = new ChannelA()
+            /// {
+            ///     Id = 1, 
+            ///     Name = "ChannelA",
+            ///     ChannelProtocol = 456405,
+            /// };
+            /// ChannelB channelB = new ChannelB()
+            /// {
+            ///     Id = 2, 
+            ///     Name = "ChannelB",
+            ///     ChannelProtocol = 5654551,
+            /// };
+            /// ChannelC channelC = new ChannelC()
+            /// {
+            ///     Id = 1,
+            ///     Name = "ChannelC",
+            ///     ChannelProtocol = 456405,
+            /// };
+            /// 
+            /// sendNotification(new PushNotificationService(), channelA, "Push Notification : heres the news....");
+            /// sendNotification(new SmsNotificationService(), channelB, "SMS Notification : heres the news....");
+            /// sendNotification(new EmailNotificationService(), channelC, "Email Notification : heres the news....");
+            #endregion
 
             #endregion
         }
