@@ -1,7 +1,15 @@
-﻿namespace Assignment
+﻿using Assignment.Q1;
+
+namespace Assignment
 {
     internal class Program
     {
+        static void DisplayShape(IShape shape)
+        {
+            Console.WriteLine("\n---------------------------------");
+            shape.DisplayShapeInfo();
+            Console.WriteLine("\n---------------------------------");
+        }
         static void Main()
         {
             #region Part 01
@@ -48,8 +56,18 @@
             #endregion
 
             #endregion
-        
-            
+
+            #region Part 02
+
+            #region Q1
+            /// Rectangle Rectangle = new Rectangle(5, 3);
+            /// Circle Circle = new Circle(5);
+            ///
+            /// DisplayShape(Rectangle);
+            /// DisplayShape(Circle);
+            #endregion
+
+            #endregion
         }
     }
 }
