@@ -121,9 +121,15 @@ namespace Demo
             /// Console.WriteLine($"Arr01.GetHashCode() => {Names01.GetHashCode()}"); // Based in his place in heap
             /// Console.WriteLine($"Arr02.GetHashCode() => {Names02.GetHashCode()}");
             /// 
+            /// 
             /// Names02 = (string[])Names01.Clone(); Console.WriteLine("After Deep Copy -->  Names02 = (string[])Names01.Clone()");
+            /// Console.WriteLine($"{ReferenceEquals(Names01, Names02)}"); // False => [ref{array} != ref{array}]
+            /// Console.WriteLine($"{ReferenceEquals(Names01[1], Names02[1])}"); // True =>
+            /// // Names01=> ref[ref0,ref1,ref2]
+            /// // Names02=> ref[ref0,ref1,ref2]
+            /// /// SO the ref of Names01 and Names02 NOTEQUAL but, ref0 = ref0
             /// // Clone Method: Will Generate New Object with NEW and DIFFERENT Identity
-            /// //             : This Object Will Have the Same State[Date] of the Original Object [Shallow Copy for the items]
+            /// //             : This Object Will Have the Same State[Data] of the Original Object [Shallow Copy for the items]
             /// Console.WriteLine($"Arr01.GetHashCode() => {Names01.GetHashCode()}"); // Based in his place in heap
             /// Console.WriteLine($"Arr02.GetHashCode() => {Names02.GetHashCode()}");
             /// 
